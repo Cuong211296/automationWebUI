@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
@@ -67,8 +68,14 @@ public class CreateProductPage {
         ab.sendKeys("Sản Phẩm Trưng Bày 2");
         driver.findElement(descriptionProductText).sendKeys("Có một điều đáng chú ý về tình trạng hiện tại của Apple: Vị trí tụt hậu trong cuộc đua AI không hẳn là vấn đề nghiêm trọng nhất của công ty này. Nhưng tuần tới có thể lại là một câu chuyện khác.");
     }
-    public void uploadImage(){
-        driver.findElement(imageProduct).sendKeys("C:\\Users\\cuong\\Downloads\\euqnWGLZqFg8.jpg");
+    public void uploadImage() {
+        URL imageUrl = getClass().getClassLoader().getResource("testdata/images/euqnWGLZqFg8.jpg");
+        if (imageUrl == null) {
+            throw new RuntimeException("❌ Cannot find resource: testdata/images/euqnWGLZqFg8.jpg");
+        }
+
+        File imageFile = new File(imageUrl.getFile());
+        driver.findElement(imageProduct).sendKeys(imageFile.getAbsolutePath());
     }
     public void inputPrice(){
         driver.findElement(listingPriceText).sendKeys("10000");

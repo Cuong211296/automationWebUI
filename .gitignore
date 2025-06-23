@@ -1,0 +1,24 @@
+# Ignore IntelliJ project files
+.idea/
+*.iml
+
+# Ignore Maven target directory
+target/
+
+# Ignore test output
+allure-results/
+allure-report/
+test-output/
+
+# Ignore logs
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Excel test data (nếu bạn không muốn commit file testdata)
+*.xlsx
+
+# Optional: Ignore environment-specific config (uncomment if needed)
+# src/test/resources/config/config.properties

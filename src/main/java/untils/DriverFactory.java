@@ -54,8 +54,9 @@ public class DriverFactory {
                 throw new RuntimeException("Khong tim thay browser nào");
             }
         }
-        driver.get().manage().window().maximize();
+        driver.get().manage().window();
         System.out.println("Driver initialized successfully");
+        System.out.println("Viewport size: " + driver.get().manage().window().getSize());
     }
 
     public static WebDriver getDriver(){

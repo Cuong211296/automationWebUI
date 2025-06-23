@@ -1,0 +1,14 @@
+<suite name="Regression Suite" parallel="tests" thread-count="2">
+    <parameter name="browser" value="chrome"/>
+    <test name="Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Create Product Tests - chrome">
+        <classes>
+            <class name="tests.CreateProduct"/>
+        </classes>
+    </test>
+</suite>

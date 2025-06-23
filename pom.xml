@@ -62,8 +62,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.11.0</version> <!-- version mới -->
             <configuration>
-                <source>24</source>   <!-- hoặc 21/24 tùy JDK -->
-                <target>24</target>
+                <release>21</release>
             </configuration>
         </plugin>
     </plugins>
